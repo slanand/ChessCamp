@@ -1,0 +1,26 @@
+<%= simple_form_for(@family, html: { class: 'form-horizontal' }) do |family_form| %>
+       
+    <div class="row">
+      <div class="small-6 columns">
+        <fieldset>
+        <legend><%= controller.action_name.capitalize %> Family</legend>
+          <%= render :partial => "family_fields", :locals => { :f => family_form } %>
+        </fieldset>
+      </div>
+      <div class="small-1 columns">&nbsp;</div>
+      <div class="small-5 columns" id="family_students">
+        <%= town_form.simple_fields_for :students do |student_form| %>
+            <%= render :partial => "student_fields", :locals => { :f => student_form } %>
+          <% end %> 
+          <p>
+            <br /><%= family_form.link_to_add("Add Student", :students, :class => 'button tiny') %>
+          </p>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, class: 'button radius' %>
+      <%= link_to 'Back to list of families', families_path, :class => 'button secondary radius' %>
+    </div>
+
+<% end %>

@@ -53,7 +53,7 @@
 // We use these as default colors throughout
 // $primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
+$alert-color: #E6172C;
 $success-color: #B5EBC9;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
@@ -159,8 +159,8 @@ $success-color: #B5EBC9;
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-font-color: #9C0F00;
+$anchor-font-color-hover: scale-color(#9C0F00, $lightness: -14%);
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
@@ -240,7 +240,7 @@ $success-color: #B5EBC9;
 // We use these to control text style.
 // $alert-font-weight: normal;
 // $alert-font-size: rem-calc(13);
-$alert-font-color: #43AC6A;
+// $alert-font-color: #fff;
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
 // We use this for close hover effect.
@@ -312,7 +312,7 @@ $alert-font-color: #43AC6A;
 // $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
+$button-tny: rem-calc(6);
 // $button-sml: rem-calc(14);
 // $button-med: rem-calc(16);
 // $button-lrg: rem-calc(18);
@@ -1029,7 +1029,7 @@ $panel-bg: scale-color(#B5E7F5, $lightness: 50%);
 
 // These control the background color for the table and even rows
 // $table-bg: #fff;
-$table-even-row-bg: #FAF2F0;
+$table-even-row-bg: #E8E8E8;
 
 // These control the table cell border style
 $table-border-style: none;
@@ -1123,11 +1123,11 @@ $table-margin-bottom: rem-calc(25);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #F7EAE6;
+$topbar-bg-color: #9C0F00;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 50px;
+// $topbar-height: 45px;
 $topbar-margin-bottom: 20px;
 
 // Controlling the styles for the title in the top bar
@@ -1135,8 +1135,8 @@ $topbar-margin-bottom: 20px;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #F7EAE6;
-$topbar-dropdown-link-color: #000;
+// $topbar-dropdown-bg: #333;
+// $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: #F7EAE6;
 // $topbar-dropdown-link-weight: normal;
 // $topbar-dropdown-toggle-size: 5px;
@@ -1144,14 +1144,14 @@ $topbar-dropdown-link-color: #000;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: #000;
-$topbar-link-color-hover: #333;
+// $topbar-link-color: #9C0F00;
+// $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
-$topbar-link-font-size: rem-calc(18);
+// $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg-hover: #FAF2F0;
+// $topbar-link-bg-hover: #272727;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1252,9 +1252,43 @@ a img {
 
 }
 
+#welcome, #quote {
+	text-align: center;
+	left: 100px;
+}
+
+#coachingpic {
+	padding-top: 140px;
+}
+
+#boysplaying {
+	padding-left: 50px;
+	padding-top: 95px;
+}
+
+#allenpic {
+	padding-top: 80px;
+}
+
+#kelseypic {
+	padding-top: 50px;
+}
+
+#bobbypic {
+	padding-top: 50px;
+}
+
+#alexpic {
+	padding-top: 50px;
+}
+
 select.date { width: 95px; }
 #camp_time_slot, #camp_max_students, #camp_cost, #camp_curriculum_id { width: 290px; }
 #instructor_bio { height: 7rem; }
 #curriculum_description { height: 7rem; }
 
 @import 'foundation';
+
+.button {
+	background-color: #9C0F00;
+}

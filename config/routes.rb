@@ -1,4 +1,20 @@
 ChessCamp::Application.routes.draw do
+  get "registrations/edit"
+  get "registrations/index"
+  get "registrations/new"
+  get "registrations/show"
+  get "locations/edit"
+  get "locations/index"
+  get "locations/new"
+  get "locations/show"
+  get "students/edit"
+  get "students/index"
+  get "students/new"
+  get "students/show"
+  get "families/edit"
+  get "families/index"
+  get "families/new"
+  get "families/show"
   # generated routes
   resources :curriculums
   resources :instructors
