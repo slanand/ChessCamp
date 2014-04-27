@@ -1,8 +1,6 @@
 class Family < ActiveRecord::Base
   include ChessCampHelpers
 
-  accepts_nested_attributes_for :students, reject_if: lambda { |student| student[:first_name].blank? }, allow_destroy: true
-
   # relationships
   has_many :students
   has_many :registrations, through: :students

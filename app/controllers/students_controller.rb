@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
+
   def edit
   end
 
@@ -12,7 +14,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-  	@student_camps = Student.camps.chronological.to_a
+  	@student_camps = @student.camps.chronological.to_a
   end
 
   def create
@@ -26,7 +28,7 @@ class StudentsController < ApplicationController
 
   def update
   	if @student.update(student_params)
-  		redirect to @studnet, notice: "The student #{@student.proper_name} was revised in the system."
+  		redirect to @student, notice: "The student #{@student.proper_name} was revised in the system."
   	else
   		render action: 'edit'
   	end

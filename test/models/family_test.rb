@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class FamilyTest < ActiveSupport::TestCase
-  # test student nested form 
-  should accept_nested_attributes_for(:attractions).allow_destroy(true)
 
   # test relationships
   should have_many(:students)

@@ -1,27 +1,24 @@
 <%= simple_form_for(@student, html: { class: 'form-horizontal' }) do |f| %>
 <div class = "row">
-  <div class="small-6 columns">
-    <h3><%= controller.action_name.capitalize %> Student</h3>
-      
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :rating %>
-      <%= f.input :date_of_birth, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 18, end_year: Date.today.year - 5  %>
-      <%= f.input :active %>
-  </div>
-  <div class="small-1 columns">&nbsp;</div>
-  <div class="small-5 columns">
-      <% if controller.action_name=="edit" || controller.action_name=="new" %>
-      <h3>Family</h3>
-      <%= f.input :family_id, label: "", collection: Family.active.alphabetical, as: :select %>
-      <% end %>
+  <div class="6-large columns">
+     <fieldset>
+      <legend><%= controller.action_name.capitalize %> Student </legend>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <% if controller.action_name=="edit" || controller.action_name=="new" %>
+        <%= f.collection_select :family_id, Family.alphabetical.active.all, :id, :family_name, :prompt => "Select family..." %>
+        <% end %>
+        <%= f.input :rating %>
+        <%= f.input :date_of_birth, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 18, end_year: Date.today.year - 5  %>
+        <%= f.input :active %>
+     </fieldset>
   </div>
 </div>
 
 
-    <div class="form-actions">
-      <%= f.submit nil, class: 'button radius' %>
-      <%= link_to 'Back to list of students', students_path, :class => 'button secondary radius' %>
-    </div>
+<div class="form-actions">
+  <%= f.submit nil, class: 'button small radius' %>
+  <%= link_to 'Back to list of students', students_path, :class => 'button small secondary radius' %>
+</div>
 
 <% end %>

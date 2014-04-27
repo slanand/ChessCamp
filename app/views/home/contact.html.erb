@@ -1,27 +1,39 @@
-<h2>Contact A &amp; M Chess Camps</h2>
+<div class="small-5 columns"> 
+  <!-- contact information for a&m chess camp -->
+  <h2 id= "title">Contact Us</h2><br>
 
-<p> <%= image_tag 'Kelsey1.jpg', class: "left", width: 150 %>Despite the guilt trip we 
-  tried to lay on you in our <%= link_to "about page", about_path %>, the 
-  fact is that these camps are a fiction created for a class project for students at Carnegie Mellon University. No doubt you wanted to sign your 
-  child up for every camp we offer so they wouldn't lose every round at 
-  chess tournaments, but apparently you'll just have to keep getting used to losing.  
-  If you are bitterly disappointed (and quite honestly, you should be) and want to grouse to someone, here's the contact info:</p>
+  <h5><b>Address:</b></h5>
+  <p>Carnegie Mellon University<br>
+  5000 Forbes Avenue<br>
+  Pittsburgh, Pennsylvania 15213<br></p> 
+
+  <br>
 
 <table cellpadding="3" class="table">
-  <tr>
-    <td>Webmaster:&nbsp;&nbsp;&nbsp;</td>
-    <td>Professor Larry Heimann</td>
+   <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
   </tr>
   <tr>
-    <td>Email:</td>
-    <td>
-    <%= mail_to("profh@cmu.edu", "Prof. H", encode: "javascript") %> 
-    </td>
+    <td>Alex Heimann</td>
+    <td><%= mail_to "alex@razingrooks.org", "alex@razingrooks.org", :encode => "javascript" %></td>
+    <td>412-268-2323</td>
   </tr>
   <tr>
-    <td>Phone:</td>
-    <td>412-268-8211</td>
+    <td>Mark Heimann</td>
+    <td><%= mail_to "mark@razingrooks.org", "mark@razingrooks.org", :encode => "javascript" %></td>
+    <td>412-268-2323</td>
+  </tr>
+  <tr>
+    <td>Webmaster</td>
+    <td><%= mail_to "slanand@andrew.cmu.edu", "slanand@andrew.cmu.edu", :encode => "javascript" %></td>
+    <td>516-448-4475</td>
   </tr>
 </table>
 
-<p><em>Note: We welcome your complaints and look forward to reading your letters of great anguish, but there is really nothing we can do for you. Do not expect a reply -- it will only add to your disappointment and despair.</em></p>
+</div>
+
+<div class="small-7 columns">
+  <img src="/assets/BoysPlaying.jpg" id= "boysplaying" width= "550px">
+</div>

@@ -159,8 +159,8 @@ $success-color: #B5EBC9;
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
-$anchor-font-color: #9C0F00;
-$anchor-font-color-hover: scale-color(#9C0F00, $lightness: -14%);
+$anchor-font-color: #20B2AA;
+$anchor-font-color-hover: scale-color(#20B2AA, $lightness: -14%);
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
@@ -762,7 +762,7 @@ $button-margin-bottom: rem-calc(0);
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-$panel-bg: scale-color(#B5E7F5, $lightness: 50%);
+$panel-bg: scale-color(#20B2AA, $lightness: 70%);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -1123,7 +1123,7 @@ $table-margin-bottom: rem-calc(25);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #9C0F00;
+$topbar-bg-color: #20B2AA;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1144,7 +1144,7 @@ $topbar-margin-bottom: 20px;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #9C0F00;
+// $topbar-link-color: #20B2AA;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
@@ -1290,5 +1290,5 @@ select.date { width: 95px; }
 @import 'foundation';
 
 .button {
-	background-color: #9C0F00;
+	background-color: #20B2AA;
 }

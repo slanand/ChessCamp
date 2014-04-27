@@ -1,9 +1,9 @@
 <% unless @student_camps.empty? %>
   <div class="panel clearfix">
-    <h5>Students of Family</h5>
+    <h5>Registered Camps</h5>
     <ul class="side-nav">
       <% @student_camps.each do |camp| %>
-        <li><%= link_to camp.name, camp_path(camp) %> (<%= camp.start_date.strftime('%m/%d/%y') %>)</li>
+        <li><%= link_to camp.name, camp_path(camp) %>(<%= camp.start_date.strftime('%m/%d/%y') %>) <br></li>
       <% end %>
     </ul>
   </div>

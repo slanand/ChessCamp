@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
-  before_action :set_camp, only: [:show, :edit, :update, :destroy]
+  before_action :set_family, only: [:show, :edit, :update, :destroy]
 
   def edit
   end
@@ -11,7 +11,6 @@ class FamiliesController < ApplicationController
 
   def new
   	@family = Family.new
-  	@family.students.build
   end
 
   def show
@@ -46,7 +45,7 @@ class FamiliesController < ApplicationController
 	end
 
 	def family_params
-		params.require(:family).permit(:family_name, :parent_first_name, :email, :phone, :active, students_attributes: [:first_name, :last_name, :date_of_birth, :rating, :active])
+		params.require(:family).permit(:family_name, :parent_first_name, :email, :phone, :active)
 	end
 
 end
