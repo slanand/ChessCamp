@@ -13,7 +13,9 @@
     <td><%= link_to student.proper_name, student_path(student) %></td>
     <td align="center"><%= student.age %></td>
     <td align="center"><%= student.rating %></td>
-    <td><%= link_to 'Edit', edit_student_path(student), class: "button tiny radius" %></td>
+    <% if can? :update, student %>
+      <td><%= link_to 'Edit', edit_student_path(student), class: "button tiny radius" %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

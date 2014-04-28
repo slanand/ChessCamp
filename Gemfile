@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # nested form
-  gem "nested_form"
+gem "nested_form"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -55,6 +55,9 @@ gem 'carrierwave'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '3.1.5'
+
+# Can-can for authorization
+gem 'cancancan', '~> 1.7'
 
 # Additional gems that are very useful in Rails development
 group :development do

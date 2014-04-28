@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  authorize_resource
+  
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def edit

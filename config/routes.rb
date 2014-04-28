@@ -1,4 +1,8 @@
 ChessCamp::Application.routes.draw do
+  get "users/edit"
+  get "users/index"
+  get "users/new"
+  get "users/show"
   get "registrations/edit"
   get "registrations/index"
   get "registrations/new"
@@ -22,13 +26,19 @@ ChessCamp::Application.routes.draw do
   resources :students
   resources :families
   resources :locations
+  resources :users
+  resources :sessions
 
   # semi-static routes
   get 'home', to: 'home#index', as: :home
   get 'home/about', to: 'home#about', as: :about
   get 'home/contact', to: 'home#contact', as: :contact
   get 'home/privacy', to: 'home#privacy', as: :privacy
-
+  get 'user/edit' => 'users#edit', :as => :edit_current_user
+  get 'signup' => 'users#new', :as => :signup
+  get 'login' => 'sessions#new', :as => :login
+  get 'logout' => 'sessions#destroy', :as => :logout
+  
   # set the root url
   root to: 'home#index'
 
