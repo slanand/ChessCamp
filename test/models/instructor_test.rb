@@ -6,6 +6,9 @@ class InstructorTest < ActiveSupport::TestCase
   should have_many(:camps).through(:camp_instructors)
   should have_one(:user)
 
+  # test nested form
+  should accept_nested_attributes_for(:attractions).allow_destroy(true)
+
   # test validations
   should validate_presence_of(:first_name)
   should validate_presence_of(:last_name)

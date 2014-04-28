@@ -104,5 +104,6 @@ Feature: Manage instructors
     And I fill in "instructor_user_attributes_password_confirmation" with "secret"
     And I press "Update Instructor"
     Then I should see "Patrick Dustmann was revised in the system"
+    Then show me the page
     And I should see "pdust@cmu.edu"
   

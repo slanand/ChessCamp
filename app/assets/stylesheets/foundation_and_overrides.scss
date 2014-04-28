@@ -1297,3 +1297,17 @@ select.date { width: 95px; }
 	text-align: right;
 	font-size: 50%;
 }
+
+.min_user {
+      padding: 2px 2px 2px 5px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      select { width: 180px; }
+      input { width: 180px; }
+  }
+
+/* Cutting back the spacing on simple_form... */
+.form-horizontal .min_user .control-label {
+  font-size: 90%;
+}
