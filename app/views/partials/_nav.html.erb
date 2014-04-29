@@ -66,8 +66,8 @@
             <% if logged_in? %>
                 <%= link_to "Welcome, #{current_user.instructor.first_name} (#{current_user.role})", user_path(current_user) %>
                 <ul class= "dropdown">
-                  <% if can? :update, current_user %>
-                    <li><%= link_to 'Edit Settings', edit_instructor_path(current_user)%></li> 
+                  <% if can? :update, current_user.instructor %>
+                    <li><%= link_to 'Edit Profile', edit_instructor_path(current_user.instructor)%></li> 
                   <% end %>
                   <li> <%= link_to 'Logout', logout_path %> </li>
               <% else %>

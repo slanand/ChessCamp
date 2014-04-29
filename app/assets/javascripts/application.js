@@ -25,15 +25,5 @@ $(function(){
       changeYear: true,
       "dateFormat": "mm/dd/yyyy"
     });
-    $( "#camp_start_date" ).datepicker({
-      changeMonth: true,
-      changeYear: true,
-      "dateFormat": "mm/dd/yyyy"
-    });
-    $( "#camp_end_date" ).datepicker({
-      changeMonth: true,
-      changeYear: true,
-      "dateFormat": "mm/dd/yyyy"
-    });
 });
 

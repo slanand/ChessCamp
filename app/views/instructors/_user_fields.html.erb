@@ -1,10 +1,10 @@
 <div class="fields">
 	<div class = "min_user">
 	  <!-- fields -->
-	  <%= f.input :username %>
-	  <%= f.input :password %>
-	  <%= f.input :password_confirmation %>
+	  <%= f.input :username, :input_html => { :style => 'width: 180px' } %>
+	  <%= f.input :password, :input_html => { :style => 'width: 180px' } %>
+	  <%= f.input :password_confirmation, :input_html => { :style => 'width: 180px' } %>
+	  <%= f.input :role, :collection => User::ROLES, :prompt => "Select a role...", :input_html => { :style => 'width: 180px' } %>
 	  <%= f.input :active %>
-	  <%= f.input :role, :collection => User::ROLES, :prompt => "Select a role..." %>
 	</div>
 </div>
