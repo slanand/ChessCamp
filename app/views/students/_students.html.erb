@@ -10,9 +10,13 @@
 
 <% @active_students.each do |student| %>
   <tr>
-    <td><%= link_to student.proper_name, student_path(student) %></td>
+    <td><%= link_to student.name, student_path(student) %></td>
     <td align="center"><%= student.age %></td>
-    <td align="center"><%= student.rating %></td>
+    <% if student.rating == 0 %>
+      <td align="center">Unrated</td>
+    <% else %>
+      <td align="center"><%= student.rating %></td>
+    <% end %>
     <% if can? :update, student %>
       <td><%= link_to 'Edit', edit_student_path(student), class: "button tiny radius" %></td>
     <% end %>

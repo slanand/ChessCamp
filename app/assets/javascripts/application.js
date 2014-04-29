@@ -13,8 +13,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery_nested_form
+//= require jquery.ui.all
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+	$(document).foundation(); 
+	console.log("here");
+	$( "#student_date_of_birth" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      "dateFormat": "mm/dd/yyyy"
+    });
+    $( "#camp_start_date" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      "dateFormat": "mm/dd/yyyy"
+    });
+    $( "#camp_end_date" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      "dateFormat": "mm/dd/yyyy"
+    });
+});
 

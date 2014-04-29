@@ -15,12 +15,21 @@ class LocationsController < ApplicationController
   	@location = Location.new
   end
 
+  def create
+    @location = Location.new(location_params)
+    if @location.save
+      redirect_to @location, notice: "The #{@location.name} location was added to the system."
+    else
+      render action: 'new'
+    end
+  end
+
   def show
   end
 
   def update
   	if @location.update(location_params)
-  		redirect to @location, notice: "The family #{@location.name} was revised in the system."
+  		redirect_to @location, notice: "The #{@location.name} location was revised in the system."
   	else
   		render action: 'edit'
   	end

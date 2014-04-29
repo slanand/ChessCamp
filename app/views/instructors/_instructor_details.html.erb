@@ -14,6 +14,13 @@
 <strong>Biography</strong><br />
   <%= @instructor.bio.nil? ? "N/A" : @instructor.bio %><br /><br />
 
+<% if current_user.role == "admin" %>
+  <strong>Role:&nbsp;&nbsp;</strong>
+  	<%= @instructor.user.role.capitalize %><br /><br />
+  <strong>Username:&nbsp;&nbsp;</strong>
+  	<%= @instructor.user.username %><br /><br />
+<% end %>
+
 <% if can? :update, @instructor %>
 	<%= link_to "Edit this instructor", edit_instructor_path(@instructor), class: "button tiny radius" %>&nbsp;&nbsp;
 <% end %>

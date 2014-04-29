@@ -67,7 +67,7 @@
                 <%= link_to "Welcome, #{current_user.instructor.first_name} (#{current_user.role})", user_path(current_user) %>
                 <ul class= "dropdown">
                   <% if can? :update, current_user %>
-                    <li><%= link_to 'Edit Settings', edit_user_path(current_user)%></li> 
+                    <li><%= link_to 'Edit Settings', edit_instructor_path(current_user)%></li> 
                   <% end %>
                   <li> <%= link_to 'Logout', logout_path %> </li>
               <% else %>

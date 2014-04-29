@@ -2,6 +2,13 @@
 <strong>Name:&nbsp;&nbsp;</strong> 
   <%= link_to @camp.name, curriculum_path(@camp.curriculum) %><br /><br />
 
+<strong>Rating:&nbsp;&nbsp;</strong>
+  <% if @camp.curriculum.min_rating == 0 %>
+      <em>Unrated - <%= @camp.curriculum.max_rating %></em><br /><br />
+  <% else %>
+    <em><%= @camp.curriculum.min_rating %> - <%= @camp.curriculum.max_rating %></em><br /><br />
+<% end %>
+
 <strong>Cost:&nbsp;&nbsp;</strong> 
   <%= number_to_currency(@camp.cost) %><br /><br />
 
@@ -20,7 +27,6 @@
 
 <strong>Active?&nbsp;&nbsp;</strong>
   <%= @camp.active ? "Yes" : "No" %><br /><br />
-
 
 <% if can? :update, @camp %>
   <%= link_to "Edit this camp", edit_camp_path(@camp), class: "button tiny radius" %>&nbsp;&nbsp;

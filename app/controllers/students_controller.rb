@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
 
   def index
   	@active_students = Student.active.alphabetical.paginate(:page => params[:page]).per_page(10)
-  	@inactive_students = Student.active.alphabetical.paginate(:page => params[:page]).per_page(10)
+  	@inactive_students = Student.inactive.alphabetical
   end
 
   def new
@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
 
   def update
   	if @student.update(student_params)
-  		redirect to @student, notice: "The student #{@student.proper_name} was revised in the system."
+  		redirect_to @student, notice: "The student #{@student.proper_name} was revised in the system."
   	else
   		render action: 'edit'
   	end

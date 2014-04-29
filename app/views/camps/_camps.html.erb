@@ -14,7 +14,7 @@
     <td align="center"><%= camp.start_date.strftime('%m/%d/%y') %></td>
     <td align="center"><%= camp.time_slot == "am" ? "Morning" : "Afternoon" %></td>
     <% if can? :update, camp %>
-      <%= link_to "Edit this camp", edit_camp_path(camp), class: "button tiny radius" %>&nbsp;&nbsp;
+      <td><%= link_to "Edit", edit_camp_path(camp), class: "button tiny radius" %></td>
     <% end %>
   </tr>
 <% end %>

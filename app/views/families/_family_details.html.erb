@@ -5,11 +5,11 @@
 <strong>Parent First Name:&nbsp;&nbsp;</strong> 
   <%= @family.parent_first_name %><br /><br />
 
+<strong>Phone:&nbsp;&nbsp;</strong> 
+<%= number_to_phone(@family.phone)%> <br /><br />
+
 <strong>Email:&nbsp;&nbsp;</strong> 
  <%= mail_to @family.email, @family.email, encode: "javascript" %><br /><br />
-
-<strong>Phone:&nbsp;&nbsp;</strong> 
-  <%= @family.phone%> <br /><br />
 
 <strong>Active?&nbsp;&nbsp;</strong>
   <%= @family.active ? "Yes" : "No" %><br /><br /> <br />

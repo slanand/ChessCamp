@@ -1,0 +1,24 @@
+<% if current_user.role == "admin" %>
+  <div id= "adminInfo">
+    <fieldset>
+      <legend>Administrator Info</legend>
+        Registrations (<%= @num_registrations %>)<br /><br />
+        <table class="table">
+           <tr>
+            <th width="160" align="left">Students Registered</th>
+            <th width="160" align="left">Rating</th>
+          </tr>
+          <% @students.each do |student| %>
+            <tr>
+              <td><%= link_to student.name, student_path(student) %></td>
+              <% if student.rating == 0 %>
+                  <td>Unrated</td>
+                <% else %>
+                  <td><%= student.rating %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </table>
+    </fieldset>
+  </div>
+<% end %>

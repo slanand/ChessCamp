@@ -4,14 +4,15 @@
   <tr>
     <th width="120">Family Name</th>
     <th width="120">Parent First Name</th>
+    <th width="120">Phone</th>
     <th width="120">Number of Students</th>
-    <th></th>
   </tr>
 
 <% @active_families.each do |family| %>
   <tr>
     <td><%= link_to family.family_name, family_path(family) %></td>
     <td align="center"><%= family.parent_first_name %></td>
+    <td align="center"><%= number_to_phone(family.phone) %></td>
     <td align="center"><%= family.students.size %></td>
     <td><%= link_to 'Edit', edit_family_path(family), class: "button tiny radius" %></td>
   </tr>
