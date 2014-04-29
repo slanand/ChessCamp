@@ -7,7 +7,7 @@ class InstructorTest < ActiveSupport::TestCase
   should have_one(:user)
 
   # test nested form
-  should accept_nested_attributes_for(:attractions).allow_destroy(true)
+  should accept_nested_attributes_for(:user).allow_destroy(true)
 
   # test validations
   should validate_presence_of(:first_name)
