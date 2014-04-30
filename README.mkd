@@ -1,7 +1,8 @@
 Notes:
 
 1) Nested form in family form for creating student when creating a new family.
-2) Added datepicker to camp start and end dates and student date of birth. 
+2) Added datepicker for student date of birth. 
+3) Changed favicon to knight chess piece.
 
 
 Extra Credit:
