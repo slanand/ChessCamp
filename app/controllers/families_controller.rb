@@ -1,8 +1,8 @@
 class FamiliesController < ApplicationController
-  authorize_resource
   
   before_action :set_family, only: [:show, :edit, :update, :destroy]
-
+  authorize_resource
+  
   def edit
   end
 

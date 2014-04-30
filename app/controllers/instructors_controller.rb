@@ -1,9 +1,8 @@
 class InstructorsController < ApplicationController
   include ActionView::Helpers::NumberHelper
 
-  authorize_resource
-
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   def index
     @active_instructors = Instructor.active.alphabetical.paginate(:page => params[:page]).per_page(10)

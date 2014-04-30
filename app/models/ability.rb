@@ -8,13 +8,20 @@ class Ability
         can :manage, :all
       elsif user.role? :instructor
         # they can update their own profile
+        can :edit, Instructor do |i|  
+          i.id == user.instructor_id
+        end
         can :update, Instructor do |i|  
           i.id == user.instructor_id
         end
-        # they can read their own profile
-        can :show, Instructor do |i|  
-          i.id == user.instructor_id
+        can :update, User do |u|  
+          u.id == user.id
         end
+        can :edit, User do |u|  
+          u.id == user.id
+        end
+        # can view other instructors' profiles
+        can :show, Instructor
         # they can read their own camps' info
         can :read, Camp do |this_camp|
           camps = user.instructor.camps.map(&:id)
@@ -32,6 +39,7 @@ class Ability
         can :index, Camp
         can :index, Location
         can :index, Curriculum
+        can :index, User
       else
         can :read, :all
       end

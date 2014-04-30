@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
-  authorize_resource
   
   before_action :set_location, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   def edit
   end
