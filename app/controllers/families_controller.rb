@@ -13,6 +13,7 @@ class FamiliesController < ApplicationController
 
   def new
   	@family = Family.new
+    @family.students.build
   end
 
   def show
@@ -47,7 +48,7 @@ class FamiliesController < ApplicationController
 	end
 
 	def family_params
-		params.require(:family).permit(:family_name, :parent_first_name, :email, :phone, :active)
+		params.require(:family).permit(:family_name, :parent_first_name, :email, :phone, :active, student_attributes:[:id, :first_name, :last_name, :family_id, :date_of_birth, :rating, :active])
 	end
 
 end

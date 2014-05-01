@@ -1,4 +1,4 @@
-<% if current_user.role == "admin" %>
+<% if (current_user != nil) && (current_user.role == "admin") %>
   <div id= "adminInfo">
     <fieldset>
       <legend>Additional Info</legend>

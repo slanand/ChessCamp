@@ -1,4 +1,4 @@
-<% if current_user.role == 'instructor' %>
+<% if (current_user != nil) && (current_user.role == 'instructor') %>
   <% unless @students.empty? %>
     <!-- <h3>&nbsp;</h3> -->
     <div class="panel clearfix">

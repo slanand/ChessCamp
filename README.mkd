@@ -1,8 +1,10 @@
 Notes:
 
-1) Nested form in family form for creating student when creating a new family.
-2) Added datepicker for student date of birth. 
-3) Changed favicon to knight chess piece.
+1) Added datepicker for student date of birth. 
+2) Changed favicon to knight chess piece.
+3) Guests cannot see partials that have inactive camps/instructors/locations etc.
+4) Guests cannot see 'Active?' on camp or location show page. 
+5) Guests cannot see past camps on camps index page. 
 
 
 Extra Credit:

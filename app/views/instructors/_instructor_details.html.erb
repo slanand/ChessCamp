@@ -14,7 +14,7 @@
 <strong>Biography</strong><br />
   <%= @instructor.bio.nil? ? "N/A" : @instructor.bio %><br /><br />
 
-<% if (@instructor.user != nil) && (current_user.role == "admin") %>
+<% if (current_user != nil) && (@instructor.user != nil) && (current_user.role == "admin") %>
   <strong>Role:&nbsp;&nbsp;</strong>
   	<%= @instructor.user.role.capitalize %><br /><br />
   <strong>Username:&nbsp;&nbsp;</strong>
@@ -22,7 +22,7 @@
 <% end %>
 
 <% if can? :update, @instructor %>
-	<%= link_to "Edit this instructor", edit_instructor_path(@instructor), class: "button tiny radius" %>&nbsp;&nbsp;
+	<%= link_to "Edit profile", edit_instructor_path(@instructor), class: "button tiny radius" %>&nbsp;&nbsp;
 <% end %>
 <% if can? :index, Instructor %>
 	<%= link_to "Back to list instructors", instructors_path, class: "button secondary tiny radius" %>&nbsp;&nbsp;

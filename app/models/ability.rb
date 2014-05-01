@@ -40,8 +40,11 @@ class Ability
         can :index, Location
         can :index, Curriculum
         can :index, User
-      else
-        can :read, :all
+      elsif 
+        can :show, Instructor
+        can :index, Camp
+        can :show, Camp
+        can :show, Location
       end
     #
     # The first argument to `can` is the action you are giving the user

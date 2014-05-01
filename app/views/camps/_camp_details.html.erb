@@ -25,8 +25,13 @@
 <strong>Time:&nbsp;&nbsp;</strong> 
   <%= @camp.time_slot == "am" ? "Morning" : "Afternoon" %><br /><br />
 
-<strong>Active?&nbsp;&nbsp;</strong>
-  <%= @camp.active ? "Yes" : "No" %><br /><br />
+<strong>Location:&nbsp;&nbsp;</strong> 
+  <%= link_to @camp.location.name, location_path(@camp.location) %><br /><br />
+
+<% if (current_user != nil) && (current_user.role == 'admin') %>
+  <strong>Active?&nbsp;&nbsp;</strong>
+    <%= @camp.active ? "Yes" : "No" %><br /><br />
+<% end %>
 
 <% if can? :update, @camp %>
   <%= link_to "Edit this camp", edit_camp_path(@camp), class: "button tiny radius" %>&nbsp;&nbsp;

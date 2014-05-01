@@ -5,9 +5,7 @@
       <legend><%= controller.action_name.capitalize %> Student </legend>
         <%= f.input :first_name %>
         <%= f.input :last_name %>
-        <% if controller.action_name=="edit" || controller.action_name=="new" %>
         <%= f.collection_select :family_id, Family.alphabetical.active, :id, :family_name, :prompt => "Select family..." %>
-        <% end %>
         <%= f.input :rating %>
         <%= f.input :date_of_birth, as: :string %>
         <%= f.input :active %>

@@ -23,7 +23,9 @@ $(function(){
 	$( "#student_date_of_birth" ).datepicker({
       changeMonth: true,
       changeYear: true,
-      "dateFormat": "mm/dd/yyyy"
+      "dateFormat": "mm/dd/yy"
     });
+
 });
+
 
