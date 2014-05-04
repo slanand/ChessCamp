@@ -7,6 +7,7 @@ class InstructorsController < ApplicationController
   def index
     @active_instructors = Instructor.active.alphabetical.paginate(:page => params[:page]).per_page(10)
     @inactive_instructors = Instructor.inactive.alphabetical.paginate(:page => params[:page]).per_page(10)
+    @instructors = Instructor.alphabetical.paginate(:page => params[:page]).per_page(10)
   end
 
   def show

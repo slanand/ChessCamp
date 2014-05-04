@@ -1,5 +1,7 @@
 Notes:
 
+*** Sometimes I get an error for a location test when I run 'rake test:units'. But when I run I 'rake test:location' and 'rake test:units' again, all tests pass, not sure why this happens... ***
+
 1) Added datepicker for student date of birth. 
 2) Changed favicon to knight chess piece.
 3) Guests cannot see partials that have inactive camps/instructors/locations etc.
@@ -12,6 +14,7 @@ Notes:
 10) Instructor dashboard has list of all upcoming camps for an instructor, number of students registered and a link to view the list of students registered for a particular camp. 
 11) Instructors can view other camps, but cannot see the registered students partial on the camps show page if they haven't been assigned to that camp.
 12) Instructors, admins and guests can also view upcoming camps where a specified location is going to be used through the 'camps_using' partial on the location show page.
+13) Instructors index page for administrators is a list of all instructors with 2 additional columns: Active and Email address (as told in the last page of the chess camp narrative). 
 
 
 Extra Credit:
