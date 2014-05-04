@@ -46,7 +46,7 @@
 		            <th># Students<br>Registered</th>
 				<% @instructor_camps.each do |camp| %>
 				  <tr>
-				    <td width="180"><strong><%= link_to camp.name, camp_path(camp) %></strong> (<%= camp.start_date.strftime('%m/%d/%y') %>) 
+				    <td width="200"><strong><%= link_to camp.name, camp_path(camp) %></strong> (<%= camp.start_date.strftime('%m/%d/%y') %>) 
 				    </td>
 				    <td align="center"> <%= camp.registrations.size %> </td>
 				    <td width="200"> <%= link_to "See list of registered students", registered_students_path(:id => camp.id), class: "button tiny radius" %>

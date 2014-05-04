@@ -3,9 +3,9 @@
 <p>Below is information on upcoming camp registrations and instructor assignments:</p> <br>
 
 <div id= "row">
-	<div id="adminCamps" class= "small-8 columns">
+	<div id="adminCamps" class= "small-9 columns">
 		<h4> Upcoming Chess Camps <span class="add_link"><%= link_to "[add new camp]", new_camp_path %></span></h4>
-		<% if @instructor_camps.size == 0 %>
+		<% if @upcoming_camps.size == 0 %>
 			<h5><em> No upcoming camps to show. </em></h5>
 		<% else %>
 			<table class="table">
@@ -15,7 +15,7 @@
 		            <th></th>
 				<% @upcoming_camps.each do |camp| %>
 				  <tr>
-				    <td width="400"><strong><%= link_to camp.name, camp_path(camp) %></strong> (<%= camp.start_date.strftime('%m/%d/%y') %>) <br>
+				    <td width="450"><strong><%= link_to camp.name, camp_path(camp) %> (<%= camp.start_date.strftime('%m/%d/%y') %>)</strong> <br>
 				    	<span class="smtext"><%= truncate(camp.curriculum.description, length: 100, omission: ' ') %><%= link_to "...(more)", curriculum_path(camp.curriculum) %></span>
 				    </td>
 				    <% if camp.instructors.size != 0 %>
