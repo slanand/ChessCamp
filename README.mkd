@@ -10,6 +10,8 @@ Notes:
 8) Payment report lists students registered for the specified camp, and the adminstrator can also edit registrations accordingly. User can also view the payment report from a camp's show page. 
 9) Menu and dropdown options on top navigation bar change depending on whether the user is authorized to index/add an entity. 
 10) Instructor dashboard has list of all upcoming camps for an instructor, number of students registered and a link to view the list of students registered for a particular camp. 
+11) Instructors can view other camps, but cannot see the registered students partial on the camps show page if they haven't been assigned to that camp.
+12) Instructors, admins and guests can also view upcoming camps where a specified location is going to be used through the 'camps_using' partial on the location show page.
 
 
 Extra Credit:

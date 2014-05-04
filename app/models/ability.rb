@@ -42,8 +42,9 @@ class Ability
         can :index, Location
         can :index, Curriculum
         can :index, User
-        # can view other camps
+        # can view other camps and locations
         can :show, Camp
+        can :show, Location
       else 
         # guests can 
         can :show, Instructor
@@ -53,6 +54,7 @@ class Ability
         can :index, Camp
         can :show, Camp
         can :show, Location
+        can :index, Location
       end
     #
     # The first argument to `can` is the action you are giving the user

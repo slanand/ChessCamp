@@ -9,7 +9,7 @@ class CurriculumsController < ApplicationController
   end
 
   def show
-    @camps = @curriculum.camps.chronological.to_a
+    @camps = @curriculum.camps.chronological.paginate(:page => params[:page]).per_page(10)
   end
 
   def new

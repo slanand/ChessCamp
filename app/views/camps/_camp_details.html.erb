@@ -27,7 +27,7 @@
 
 <strong>Location:&nbsp;&nbsp;</strong> 
   <%= link_to @camp.location.name, location_path(@camp.location) %><br /><br />
-  
+
 <strong>Active?&nbsp;&nbsp;</strong>
   <%= @camp.active ? "Yes" : "No" %><br /><br />
 
@@ -35,6 +35,9 @@
   <%= link_to "Edit this camp", edit_camp_path(@camp), class: "button tiny radius" %>&nbsp;
 <% end %> 
 <br><br>
+<% if current_user == nil %>
+  <%= link_to "Back to list camps", camps_path, class: "button secondary tiny radius" %>&nbsp;&nbsp;
+<% end %>
 <% if can? :create, Registration %>
   <%= link_to "Register student for this camp", new_registration_path(camp_id: @camp.id), class: "button secondary tiny radius" %>&nbsp;
 <% end %>

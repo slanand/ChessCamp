@@ -1262,7 +1262,6 @@ a img {
 }
 
 #boysplaying {
-	padding-left: 50px;
 	padding-top: 95px;
 }
 
@@ -1276,6 +1275,10 @@ a img {
 
 #bobbypic {
 	padding-top: 50px;
+}
+
+#boysPic {
+	bottom: 50px;
 }
 
 #alexpic {
@@ -1317,6 +1320,22 @@ select.date { width: 95px; }
   max-width: 100px;
   max-height: 200px;
 }
+
+#instructorCamps {
+	bottom: 15px;
+}
+
+#homeSidePartial {
+	top: 10px;
+}
+
+#map-canvas img{ 
+  max-width: none;
+}
+
+#body #map-canvas label { 
+  width: auto; display:inline; 
+} 
 
 /* Cutting back the spacing on simple_form... */
 .form-horizontal .min_user .control-label {

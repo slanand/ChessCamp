@@ -25,6 +25,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @camps = @location.camps.upcoming.chronological.paginate(:page => params[:page]).per_page(10)
   end
 
   def update

@@ -16,6 +16,9 @@
 <% if can? :update, @curriculum %>
 	<%= link_to "Edit this curriculum", edit_curriculum_path(@curriculum), class: "button tiny radius" %>&nbsp;&nbsp;
 <% end %>
+<% if can? :index, Curriculum %>
+	<%= link_to "Back to list curriculums", curriculums_path, class: "button secondary tiny radius" %>&nbsp;&nbsp;
+<% end %>
 <% if can? :destroy, @curriculum %>
 <%= link_to 'Destroy curriculum', curriculum_path(@curriculum), data: { confirm: 'Are you sure you want to permanently remove this curriculum from the system?' }, method: :delete, class: "button tiny radius alert" %>
 <% end %>

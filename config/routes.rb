@@ -41,9 +41,9 @@ ChessCamp::Application.routes.draw do
   get 'logout' => 'sessions#destroy', :as => :logout
   
   # params begin with a :
-  get 'camp/:id/paymentReport' => 'home#paymentReport', as: :dashboard_payment_report
-  get 'camp/:id/payment_report' => 'camps#payment_report', as: :camp_payment_report
-  get 'camp/:id/registeredStudents' => 'home#registeredStudents', as: :registered_students
+  get 'camp/:id/home_payment_report' => 'home#home_payment_report', as: :dashboard_payment_report
+  get 'camp/:id/camp_payment_report' => 'camps#camp_payment_report', as: :camp_payment_report
+  get 'camp/:id/registered_students' => 'home#registered_students', as: :registered_students
 
   # set the root url
   root to: 'home#index'
