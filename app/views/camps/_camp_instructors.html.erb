@@ -4,8 +4,9 @@
     <h5>Camp Instructors</h5>
     <ul class="side-nav">
       <% @instructors.each do |instructor| %>
-        <li><%= link_to instructor.name, instructor_path(instructor) %></li>
-      <% end %>
+        <li><%= link_to instructor.name, instructor_path(instructor) %>
+          <% end %>
+        </li>
     </ul>
   </div>
 

@@ -12,7 +12,7 @@ class CampsController < ApplicationController
   def show
     @instructors = @camp.instructors.alphabetical.to_a
     @num_registrations = @camp.registrations.size
-    @students = @camp.students.alphabetical.to_a
+    @students = @camp.students.alphabetical.paginate(:page => params[:page]).per_page(4)
   end
 
   def new
@@ -42,6 +42,11 @@ class CampsController < ApplicationController
   def destroy
     @camp.destroy
     redirect_to camps_url, notice: "#{@camp.name} camp on #{@camp.start_date.strftime('%m/%d/%y')} was removed from the system."
+  end
+
+  def payment_report 
+    @camp = Camp.find(params[:id])
+    @registrations = @camp.registrations.by_student.paginate(:page => params[:page]).per_page(10)
   end
 
   private

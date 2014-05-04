@@ -2,27 +2,33 @@
        
     <div class="row">
       <div class="small-6 columns">
-        <h4><%= controller.action_name.capitalize %> Camp</h4>
-        <%= f.input :curriculum_id, collection: Curriculum.active.alphabetical, prompt: "Select curriculum..." %>
-        <%= f.input :location_id, collection: Location.active.alphabetical, include_blank: true, prompt: "Select a location for your camp...", :input_html => {:style => 'width: 300px' }%>
-        <%= f.input :cost %>
-        <%= f.input :max_students %>
-        <%= f.input :start_date, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 1, end_year: Date.today.year + 1 %>
-        <%= f.input :end_date, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 1, end_year: Date.today.year + 1 %>
-        <%= f.input :time_slot, collection: [['Morning','am'],['Afternoon','pm']], prompt: "Select time..." %>
-        <%= f.input :active %>
+        <fieldset>
+          <legend><%= controller.action_name.capitalize %> Camp </legend>
+          <%= f.input :curriculum_id, collection: Curriculum.active.alphabetical, prompt: "Select curriculum..." %>
+          <%= f.input :location_id, collection: Location.active.alphabetical, include_blank: true, prompt: "Select a location for your camp...", :input_html => {:style => 'width: 300px' }%>
+          <%= f.input :cost %>
+          <%= f.input :max_students %>
+          <%= f.input :start_date, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 1, end_year: Date.today.year + 1 %>
+          <%= f.input :end_date, as: :date, order: [:month, :day, :year], include_blank: true, start_year: Date.today.year - 1, end_year: Date.today.year + 1 %>
+          <%= f.input :time_slot, collection: [['Morning','am'],['Afternoon','pm']], prompt: "Select time..." %>
+          <%= f.input :active %>
+        </fieldset>
       </div>
+      
       <div class="small-1 columns">&nbsp;</div>
+      
       <div class="small-5 columns">
         <% if controller.action_name=="edit" && @camp.active %>
         <h4>Camp Instructor(s)</h4>
         <%= f.input :instructor_ids, label: "", collection: Instructor.active.alphabetical, as: :check_boxes %>
         <% end %>
       </div>
+
     </div>
 
     <div class="form-actions">
       <%= f.submit nil, class: 'button small radius' %>
       <%= link_to 'Back to list of camps', camps_path, :class => 'button small secondary radius' %>
     </div>
+    
 <% end %>

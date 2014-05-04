@@ -14,10 +14,8 @@
 <strong>Maximum Capacity:&nbsp;&nbsp;</strong> 
  <%= @location.max_capacity %><br /><br />
 
-<% if (current_user != nil) && (current_user.role == 'admin') %>
 	<strong>Active?&nbsp;&nbsp;</strong>
 	  <%= @location.active ? "Yes" : "No" %><br /><br /> <br />
-<% end %>
 
 <% if can? :update, @location %>
 	<%= link_to "Edit this location", edit_location_path(@location), class: "button tiny radius" %>&nbsp;&nbsp;

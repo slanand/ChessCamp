@@ -6,9 +6,6 @@ class StudentTest < ActiveSupport::TestCase
   should have_many(:registrations)
   should have_many(:camps).through(:registrations)
 
-  # test nested form
-  should accept_nested_attributes_for(:students).allow_destroy(true)
-
   # test validations with matchers (as possible)
   should validate_presence_of(:first_name)
   should validate_presence_of(:last_name)

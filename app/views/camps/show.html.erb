@@ -11,6 +11,12 @@
   <div class="small-3 columns">
     <!-- SIDEBAR CONTENT GOES HERE -->
     <%= render partial: 'camp_instructors' %>
-    <%= render partial: 'camp_registrations' %>
+    <% if (current_user != nil) %>
+      <% if (current_user.role == "admin") %>
+        <%= render partial: 'camp_registrations' %>
+      <% elsif @instructors.include?(current_user.instructor) %>
+        <%= render partial: 'camp_registrations' %>
+      <% end %>
+    <% end %>
   </div>
 </div>

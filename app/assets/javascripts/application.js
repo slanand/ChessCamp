@@ -25,7 +25,6 @@ $(function(){
       changeYear: true,
       "dateFormat": "mm/dd/yy"
     });
-
 });
 
 

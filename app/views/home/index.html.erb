@@ -1,10 +1,7 @@
-<div class="small-9 columns" id="welcome">
-	<h2>Welcome to A&amp;M Chess Camp!</h2>
-
-	<h4 id= "quote"><em>"Chess is a game which reflects most honor on human wit."</em><br>~Francois Voltaire</h4>
-	<br>
-	<div id= "homepic">
-		<img src="/assets/SeanHat.jpg" id= "homepic">
-	</div>
-</div>
-
+<% if (current_user != nil) && (current_user.role == 'admin') %>
+	<%= render :partial => 'admin_home' %>
+<% elsif (current_user != nil) && (current_user.role == 'instructor') %>
+	<%= render :partial => 'instructor_home' %>
+<% else %>
+	<%= render :partial => 'general_home' %>
+<% end %>

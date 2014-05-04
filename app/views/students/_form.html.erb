@@ -1,22 +1,20 @@
 <%= simple_form_for(@student, html: { class: 'form-horizontal' }) do |f| %>
-<div class = "row">
-  <div class="6-large columns">
-     <fieldset>
-      <legend><%= controller.action_name.capitalize %> Student </legend>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.collection_select :family_id, Family.alphabetical.active, :id, :family_name, :prompt => "Select family..." %>
-        <%= f.input :rating %>
-        <%= f.input :date_of_birth, as: :string %>
-        <%= f.input :active %>
-     </fieldset>
+  <div class = "row">
+    <div class="6-large columns">
+       <fieldset>
+        <legend><%= controller.action_name.capitalize %> Student </legend>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.collection_select :family_id, Family.alphabetical.active, :id, :family_name, :prompt => "Select family..." %>
+          <%= f.input :rating %>
+          <%= f.input :date_of_birth, as: :string %>
+          <%= f.input :active %>
+
+          <div class="form-actions">
+            <%= f.submit nil, class: 'button small radius' %>
+            <%= link_to 'Back to list of students', students_path, :class => 'button small secondary radius' %>
+          </div>
+       </fieldset>
+    </div>
   </div>
-</div>
-
-
-<div class="form-actions">
-  <%= f.submit nil, class: 'button small radius' %>
-  <%= link_to 'Back to list of students', students_path, :class => 'button small secondary radius' %>
-</div>
-
 <% end %>

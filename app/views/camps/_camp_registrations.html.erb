@@ -8,6 +8,9 @@
           <li><%= link_to student.name, student_path(student) %></li>
         <% end %>
       </ul>
+      <span class="paginate">
+        <%= will_paginate @students, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+      </span>
     </div>
 
   <% else %>

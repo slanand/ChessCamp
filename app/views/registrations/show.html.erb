@@ -1,2 +1,22 @@
-<h1>Registrations#show</h1>
-<p>Find me in app/views/registrations/show.html.erb</p>
+<div class="row">
+  <div class="small-6 columns">
+
+	<h4>Registration (ID: <%= @registration.id%>)</h4>
+
+	<strong>Student:&nbsp;&nbsp;</strong> 
+	  <%= link_to @registration.student.name, student_path(@registration.student) %><br /><br />
+
+	<strong>Camp:&nbsp;&nbsp;</strong>
+	 <%= link_to @registration.camp.name, camp_path(@registration.camp) %><br /><br />
+
+	<strong>Payment Status:&nbsp;&nbsp;</strong> 
+	  <%= @registration.payment_status.capitalize %><br /><br />
+
+	<strong>Points earned:&nbsp;&nbsp;</strong> 
+	  <%= @registration.points_earned %><br /><br />
+
+	<%= link_to "Edit registration", edit_registration_path(@registration), class: "button small radius" %>&nbsp; 
+	<%= link_to_function "Back", "history.back()", :class => 'button small secondary radius' %>
+
+  </div>
+</div>

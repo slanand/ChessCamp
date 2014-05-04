@@ -11,8 +11,10 @@
           <li class="has-dropdown">
             <%= link_to "Curriculums", curriculums_path %>
             <ul class="dropdown">
-              <li><%= link_to "List Curriculums", curriculums_path %></li>
-              <li><%= link_to "Add a Curriculum", new_curriculum_path %></li>
+                <li><%= link_to "List Curriculums", curriculums_path %></li>
+              <% if can? :create, Curriculum %>
+                <li><%= link_to "Add a Curriculum", new_curriculum_path %></li>
+              <% end %>
             </ul>
           </li>
 
@@ -20,8 +22,10 @@
           <li class="has-dropdown">
             <%= link_to "Camps", camps_path %>
             <ul class="dropdown">
-              <li><%= link_to "List Camps", camps_path %></li>
-              <li><%= link_to "Add a Camp", new_camp_path %></li>
+                <li><%= link_to "List Camps", camps_path %></li>
+              <% if can? :create, Camp %>
+                <li><%= link_to "Add a Camp", new_camp_path %></li>
+              <% end %>
             </ul>
           </li>
 
@@ -30,35 +34,47 @@
             <!-- <a href="#">Instructors</a> -->
             <%= link_to "Instructors", instructors_path %>
             <ul class="dropdown">
-              <li><%= link_to "List Instructors", instructors_path %></li>
-              <li><%= link_to "Add an Instructor", new_instructor_path %></li>
+                <li><%= link_to "List Instructors", instructors_path %></li>
+                <% if can? :create, Instructor %>
+                  <li><%= link_to "Add an Instructor", new_instructor_path %></li>
+                <% end %>
             </ul>
           </li>
 
-          <li class="has-dropdown">
-            <!-- <a href="#">Families</a> -->
-            <%= link_to "Families", families_path %>
-            <ul class="dropdown">
-              <li><%= link_to "List Families", families_path %></li>
-              <li><%= link_to "Add a Family", new_family_path %></li>
-            </ul>
-          </li>
+          <% if (can? :create, Family) || (can? :index, Family) %>
+            <li class="has-dropdown">
+              <!-- <a href="#">Families</a> -->
+              <%= link_to "Families", families_path %>
+              <ul class="dropdown">
+                  <li><%= link_to "List Families", families_path %></li>
+                <% if can? :create, Family %>
+                  <li><%= link_to "Add a Family", new_family_path %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
 
-          <li class="has-dropdown">
-            <!-- <a href="#">Students</a> -->
-            <%= link_to "Students", students_path %>
-            <ul class="dropdown">
-              <li><%= link_to "List Students", students_path %></li>
-              <li><%= link_to "Add a Student", new_student_path %></li>
-            </ul>
-          </li>
+          <% if (can? :create, Student) || (can? :index, Student) %>
+            <li class="has-dropdown">
+              <!-- <a href="#">Students</a> -->
+              <%= link_to "Students", students_path %>
+              <ul class="dropdown">
+                  <li><%= link_to "List Students", students_path %></li>
+                <% if can? :create, Student %>
+                  <li><%= link_to "Add a Student", new_student_path %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
 
           <li class="has-dropdown">
             <!-- <a href="#">Locations</a> -->
             <%= link_to "Locations", locations_path %>
             <ul class="dropdown">
-              <li><%= link_to "List Locations", locations_path %></li>
-              <li><%= link_to "Add a Location", new_location_path %></li>
+                <li><%= link_to "List Locations", locations_path %></li>
+              <% if can? :create, Student %>
+                <li><%= link_to "Add a Location", new_location_path %></li>
+              <% end %>
             </ul>
           </li>
 

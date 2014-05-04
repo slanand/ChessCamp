@@ -1,4 +1,9 @@
 <h3>Instructor Details</h3><br />
+
+<% unless @instructor.picture_url.nil? %>
+    <%= image_tag @instructor.picture_url %><br /><br />
+<% end %>
+
 <strong>Name:&nbsp;&nbsp;</strong> 
   <%= @instructor.proper_name %><br /><br />
 
@@ -8,11 +13,11 @@
 <strong>Email:&nbsp;&nbsp;</strong> 
   <%= mail_to @instructor.email, @instructor.email, encode: "javascript" %><br /><br />
 
-<strong>Active?&nbsp;&nbsp;</strong>
-  <%= @instructor.active ? "Yes" : "No" %><br /><br />
-
 <strong>Biography</strong><br />
   <%= @instructor.bio.nil? ? "N/A" : @instructor.bio %><br /><br />
+
+  <strong>Active?&nbsp;&nbsp;</strong>
+    <%= @instructor.active ? "Yes" : "No" %><br /><br />
 
 <% if (current_user != nil) && (@instructor.user != nil) && (current_user.role == "admin") %>
   <strong>Role:&nbsp;&nbsp;</strong>

@@ -1,0 +1,59 @@
+<h4>Welcome back, <%= current_user.instructor.proper_name %>!</h4>
+
+<div id= "row">
+	<div class= "small-4 columns">
+		<% unless current_user.instructor.picture_url.nil? %>
+		    <%= image_tag current_user.instructor.picture_url %><br /><br />
+		<% end %>
+	</div>
+
+	<div class= "small-3 columns">
+		<strong>Name:&nbsp;&nbsp;</strong> 
+		  <%= current_user.instructor.proper_name %><br /><br />
+
+		<strong>Phone:&nbsp;&nbsp;</strong> 
+		  <%= number_to_phone(current_user.instructor.phone) %><br /><br />
+
+		<strong>Email:&nbsp;&nbsp;</strong> 
+		  <%= mail_to current_user.instructor.email, current_user.instructor.email, encode: "javascript" %><br /><br />
+
+		<strong>Biography</strong><br />
+		  <%= current_user.instructor.bio.nil? ? "N/A" : current_user.instructor.bio %><br /><br />
+
+		<strong>Active?&nbsp;&nbsp;</strong>
+		  <%= current_user.instructor.active ? "Yes" : "No" %><br /><br />
+
+		<% if (current_user != nil) %>
+		  <strong>Role:&nbsp;&nbsp;</strong>
+		  	<%= current_user.role.capitalize %><br /><br />
+		  <strong>Username:&nbsp;&nbsp;</strong>
+		  	<%= current_user.username %><br /><br />
+		<% end %>
+
+		<%= link_to "Edit profile", edit_instructor_path(current_user.instructor), class: "button tiny radius" %>&nbsp;&nbsp;
+	</div>
+
+	<div id="adminCamps" class= "small-5 columns">
+		<h4> Your Upcoming Chess Camps <span class="add_link"></span></h4>
+		<table class="table">
+			<tr>
+				<th width="160" align="left">Camp Name</th>
+	            <th># Students<br>Registered</th>
+			<% @instructor_camps.each do |camp| %>
+			  <tr>
+			    <td width="180"><strong><%= link_to camp.name, camp_path(camp) %></strong> (<%= camp.start_date.strftime('%m/%d/%y') %>) 
+			    </td>
+			    <td align="center"> <%= camp.registrations.size %> </td>
+			    <td width="200"> <%= link_to "See list of registered students", registered_students_path(:id => camp.id), class: "button tiny radius" %>
+			    </td>
+			  </tr>
+			<% end %>
+		</table>
+
+		<!-- Add the pagination using will_paginate gem -->
+		<span class="paginate">
+			<%= will_paginate @instructor_camps, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+		</span>
+	</div>
+
+</div>

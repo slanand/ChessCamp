@@ -2,23 +2,26 @@
   <div id= "adminInfo">
     <fieldset>
       <legend>Additional Info</legend>
-        Registrations (<%= @num_registrations %>)<br /><br />
+        Registrations (<%= @num_registrations %>) &nbsp; <%= link_to "Get payment report", camp_payment_report_path(:id => @camp.id), class: "button tiny radius" %> 
         <table class="table">
            <tr>
             <th width="160" align="left">Students Registered</th>
-            <th width="160" align="left">Rating</th>
+            <th width="160" align="center">Rating</th>
           </tr>
           <% @students.each do |student| %>
             <tr>
               <td><%= link_to student.name, student_path(student) %></td>
               <% if student.rating == 0 %>
-                  <td>Unrated</td>
+                  <td align="center">Unrated</td>
                 <% else %>
-                  <td><%= student.rating %></td>
+                  <td align="center"><%= student.rating %></td>
               <% end %>
             </tr>
           <% end %>
         </table>
+        <span class="paginate">
+        <%= will_paginate @students, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+        </span>
     </fieldset>
   </div>
 <% end %>

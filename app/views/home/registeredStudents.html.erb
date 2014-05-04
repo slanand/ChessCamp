@@ -1,0 +1,24 @@
+<h4> Registrations for <%=@camp.name %> (<%= @camp.start_date.strftime('%m/%d/%y') %>)</h4>
+<table class="table">
+  <tr>
+    <th width="150">Student</th>
+    <th width="100">Rating</th>
+    <th></th>
+  </tr>
+
+<% @registrations.each do |registration| %>
+  <tr>
+    <td><%= link_to registration.student.proper_name, student_path(registration.student) %> </td>
+    <% if registration.student.rating == 0 %>
+        <td align="center">Unrated</td>
+      <% else %>
+        <td align="center"><%= registration.student.rating %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<!-- Add the pagination using will_paginate gem -->
+<span class="paginate">
+<%= will_paginate @registrations, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+</span>

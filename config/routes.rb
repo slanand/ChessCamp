@@ -28,6 +28,7 @@ ChessCamp::Application.routes.draw do
   resources :locations
   resources :users
   resources :sessions
+  resources :registrations
 
   # semi-static routes
   get 'home', to: 'home#index', as: :home
@@ -39,6 +40,11 @@ ChessCamp::Application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
   get 'logout' => 'sessions#destroy', :as => :logout
   
+  # params begin with a :
+  get 'camp/:id/paymentReport' => 'home#paymentReport', as: :dashboard_payment_report
+  get 'camp/:id/payment_report' => 'camps#payment_report', as: :camp_payment_report
+  get 'camp/:id/registeredStudents' => 'home#registeredStudents', as: :registered_students
+
   # set the root url
   root to: 'home#index'
 

@@ -1309,6 +1309,15 @@ select.date { width: 95px; }
 	width: 200px;
 }
 
+.add_link {
+	font-size: 70%;
+}
+
+.image-size {
+  max-width: 100px;
+  max-height: 200px;
+}
+
 /* Cutting back the spacing on simple_form... */
 .form-horizontal .min_user .control-label {
   font-size: 90%;

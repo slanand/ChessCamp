@@ -22,6 +22,9 @@ class Ability
         end
         # can view other instructors' profiles
         can :show, Instructor
+        # can see curriculums and curriculum information
+        can :show, Curriculum
+        can :index, Curriculum
         # they can read their own camps' info
         can :read, Camp do |this_camp|
           camps = user.instructor.camps.map(&:id)
@@ -32,16 +35,21 @@ class Ability
           student_camps = user.instructor.camps.map{|c| c.students.map(&:id)}.flatten
           student_camps.include? this_student.id 
         end
-        # can see a list of all instructors
+        # instructors can see a list of all:
         can :index, Instructor
-        can :index, Family
         can :index, Student
         can :index, Camp
         can :index, Location
         can :index, Curriculum
         can :index, User
-      elsif 
+        # can view other camps
+        can :show, Camp
+      else 
+        # guests can 
         can :show, Instructor
+        can :index, Instructor
+        can :index, Curriculum
+        can :show, Curriculum
         can :index, Camp
         can :show, Camp
         can :show, Location

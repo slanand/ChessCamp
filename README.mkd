@@ -3,8 +3,13 @@ Notes:
 1) Added datepicker for student date of birth. 
 2) Changed favicon to knight chess piece.
 3) Guests cannot see partials that have inactive camps/instructors/locations etc.
-4) Guests cannot see 'Active?' on camp or location show page. 
+4) Guests cannot see inactive camps/curriculums/locations/instructors partials on an entity's index page. 
 5) Guests cannot see past camps on camps index page. 
+6) Admins can register students on a camp's show page (camp id is hidden value for the registration form).
+7) Admin dashboard has paginated list of all upcoming camps and instructor assignments, where they can view payment reports for each camp. 
+8) Payment report lists students registered for the specified camp, and the adminstrator can also edit registrations accordingly. User can also view the payment report from a camp's show page. 
+9) Menu and dropdown options on top navigation bar change depending on whether the user is authorized to index/add an entity. 
+10) Instructor dashboard has list of all upcoming camps for an instructor, number of students registered and a link to view the list of students registered for a particular camp. 
 
 
 Extra Credit:

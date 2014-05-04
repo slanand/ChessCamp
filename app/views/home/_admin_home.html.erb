@@ -1,0 +1,37 @@
+<h3>Welcome back, <%= current_user.instructor.proper_name %>!</h3>
+
+<p>Below is information on upcoming camp registrations and instructor assignments:</p>
+
+<div id= "row">
+	<div id="adminCamps" class= "small-8 columns">
+		<h4> Upcoming Chess Camps <span class="add_link"><%= link_to "[add new camp]", new_camp_path %></span></h4>
+		<table class="table">
+			<tr>
+				<th width="160" align="left">Camp Name</th>
+	            <th width="160" align="left">Assigned Instructors</th>
+	            <th></th>
+			<% @upcoming_camps.each do |camp| %>
+			  <tr>
+			    <td width="400"><strong><%= link_to camp.name, camp_path(camp) %></strong> (<%= camp.start_date.strftime('%m/%d/%y') %>) <br>
+			    	<span class="smtext"><%= truncate(camp.curriculum.description, length: 100, omission: ' ') %><%= link_to "...(more)", curriculum_path(camp.curriculum) %></span>
+			    </td>
+			    <% if camp.instructors.size != 0 %>
+			    	<td width="230">
+			    	<% camp.instructors.alphabetical.each do |instructor| %>
+					  	<%= link_to instructor.proper_name, instructor_path(instructor) %> <br>
+					<% end %>
+					</td>
+				<% end %>
+			    <td width="200"> <%= link_to "Get payment report of registered students", dashboard_payment_report_path(:id => camp.id), class: "button tiny radius" %>
+			    </td>
+			  </tr>
+			<% end %>
+		</table>
+
+		<!-- Add the pagination using will_paginate gem -->
+		<span class="paginate">
+			<%= will_paginate @upcoming_camps, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+		</span>
+	</div>
+
+</div>

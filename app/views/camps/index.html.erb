@@ -20,6 +20,8 @@
 
   <div class="small-4 columns">
     <!-- SIDEBAR CONTENT GOES HERE -->
-    <%= render :partial => "inactive_camps" %>
+    <% if (current_user != nil) %>
+      <%= render :partial => "inactive_camps" %>
+    <% end %>
   </div>
 </div>
