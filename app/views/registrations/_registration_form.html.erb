@@ -4,7 +4,7 @@
     <legend> <%= controller.action_name.capitalize %> Registration </legend>
     
     <%= f.hidden_field :camp_id %>
-    <%= f.input :student_id, collection: @students, include_blank: true, prompt: "Select student..." %>
+    <%= f.input :student_id, collection: @students, prompt: "Select student..." %>
     <%= f.input :payment_status, collection: [['Deposit only', 'deposit'],['Paid', 'full']], prompt: "Select payment_status..." %>
     <%= f.input :points_earned %>
 

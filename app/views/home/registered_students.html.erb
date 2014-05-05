@@ -3,7 +3,6 @@
   <tr>
     <th width="150">Student</th>
     <th width="100">Rating</th>
-    <th width="100">Payment Status</th>
     <th></th>
   </tr>
 
@@ -15,8 +14,6 @@
       <% else %>
         <td align="center"><%= registration.student.rating %></td>
     <% end %>
-    <td align="center"> <%= registration.payment_status.capitalize %></td>
-    <td> <%= link_to "Edit registration", edit_registration_path(registration), class: "button tiny radius" %>&nbsp; </td>
   </tr>
 <% end %>
 </table>
@@ -25,3 +22,6 @@
 <span class="paginate">
 <%= will_paginate @registrations, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
+
+<br>
+<%= link_to_function "Back to homepage", home_path, :class => 'button tiny secondary radius' %>

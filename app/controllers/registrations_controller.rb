@@ -13,8 +13,8 @@ class RegistrationsController < ApplicationController
   def new
   	@registration = Registration.new
   	@registration.camp_id = params[:camp_id] unless params[:camp_id].nil?
-  	@students = (Student.active.at_or_above_rating(@registration.camp.curriculum.min_rating).below_rating(@registration.camp.curriculum.max_rating).alphabetical.to_a) - (@registration.camp.students)
-  	
+    # students eligible to register for a camp must be active and within the rating of the camp's curriculum
+  	@students = (Student.active.at_or_above_rating(@registration.camp.curriculum.min_rating).below_rating(@registration.camp.curriculum.max_rating).alphabetical.to_a) - (@registration.camp.students) 	
   end
 
   def create

@@ -23,3 +23,9 @@
 <span class="paginate">
 <%= will_paginate camps, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
+
+<br>
+<% if can? :create, Camp %>
+  <%= link_to "Add a new camp", new_camp_path, class: "button tiny radius" %> &nbsp;&nbsp;
+<% end %>
+<%= link_to_function "Back to homepage", home_path, :class => 'button tiny secondary radius' %>

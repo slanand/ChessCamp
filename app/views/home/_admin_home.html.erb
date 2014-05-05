@@ -1,9 +1,38 @@
-<h3>Welcome back, <%= current_user.instructor.proper_name %>!</h3>
-
-<p>Below is information on upcoming camp registrations and instructor assignments:</p> <br>
+<h3>Welcome back, <%= current_user.instructor.proper_name %>!</h3> 
+<p>Below is your current profile and information on upcoming camp registrations &amp; instructor assignments:</p>  <br>
 
 <div id= "row">
-	<div id="adminCamps" class= "small-9 columns">
+	<div id= "adminBio" class= "small-4 columns">
+		<% unless current_user.instructor.picture_url.nil? %>
+		    <%= image_tag current_user.instructor.picture_url %><br /><br />
+		<% end %>
+
+		<strong>Name:&nbsp;&nbsp;</strong> 
+		  <%= current_user.instructor.proper_name %><br /><br />
+
+		<strong>Phone:&nbsp;&nbsp;</strong> 
+		  <%= number_to_phone(current_user.instructor.phone) %><br /><br />
+
+		<strong>Email:&nbsp;&nbsp;</strong> 
+		  <%= mail_to current_user.instructor.email, current_user.instructor.email, encode: "javascript" %><br /><br />
+
+		<strong>Biography</strong><br />
+		  <%= current_user.instructor.bio.nil? ? "N/A" : current_user.instructor.bio %><br /><br />
+
+		<strong>Active?&nbsp;&nbsp;</strong>
+		  <%= current_user.instructor.active ? "Yes" : "No" %><br /><br />
+
+		<% if (current_user != nil) %>
+		  <strong>Role:&nbsp;&nbsp;</strong>
+		  	<%= current_user.role.capitalize %><br /><br />
+		  <strong>Username:&nbsp;&nbsp;</strong>
+		  	<%= current_user.username %><br /><br />
+		<% end %>
+
+		<%= link_to "Edit profile", edit_instructor_path(current_user.instructor), class: "button tiny radius" %>&nbsp;&nbsp;
+	</div>
+	<div id="adminCamps" class= "small-8 columns">
+
 		<h4> Upcoming Chess Camps <span class="add_link"><%= link_to "[add new camp]", new_camp_path %></span></h4>
 		<% if @upcoming_camps.size == 0 %>
 			<h5><em> No upcoming camps to show. </em></h5>

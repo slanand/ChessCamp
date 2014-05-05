@@ -27,3 +27,9 @@
 <span class="paginate">
 <%= will_paginate students, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
+
+<br>
+<% if can? :create, Student %>
+  <%= link_to "Add a new student", new_student_path, class: "button tiny radius" %> &nbsp;&nbsp;
+<% end %>
+<%= link_to_function "Back to homepage", home_path, :class => 'button tiny secondary radius' %>

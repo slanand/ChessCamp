@@ -2,8 +2,6 @@
   <div class="small-7 columns">
     <!-- MAIN CONTENT GOES HERE -->
     <%= render :partial => "families", locals: { status: "Active", families: @active_families } %>
-    <br />
-    <%= link_to "Add a new family", new_family_path, class: "button tiny radius" %>
   </div>
 
   <div class="small-1 columns">

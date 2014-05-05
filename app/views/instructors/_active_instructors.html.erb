@@ -6,7 +6,6 @@
     <th width="180">Phone</th>
     <th width="80">Camps</th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @active_instructors.each do |instructor| %>
@@ -24,3 +23,8 @@
 <span class="paginate">
 <%= will_paginate @active_instructors, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
+
+<br>
+<% if (current_user == nil) || (current_user != nil) %>
+  <%= link_to_function "Back to homepage", home_path, :class => 'button tiny secondary radius' %>
+<% end %>
