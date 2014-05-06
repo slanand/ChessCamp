@@ -1,6 +1,6 @@
 Notes:
 
-*** Sometimes I get 1 or several location errors when I run 'rake test:units'. And the number of errors I get change every time I run 'rake test:units' afterwards, not sure why this happens... ***
+*** Sometimes I get location errors when I run 'rake test:units', and sometimes they all pass too. The number of errors I get when I run 'rake test:units' changes everytime...probably because of sending too many geocoding requests to Google? ***
 
 1) Added datepicker for student date of birth. 
 2) Changed favicon to knight chess piece and changed site logo.
