@@ -1,6 +1,6 @@
 Notes:
 
-*** Sometimes I get when I run 'rake test:units'. But when I run 'rake test:units' again a couple of times, all tests pass, not sure why this happens... ***
+*** Sometimes I get 1 or several location errors when I run 'rake test:units'. And the number of errors I get change every time I run 'rake test:units' afterwards, not sure why this happens... ***
 
 1) Added datepicker for student date of birth. 
 2) Changed favicon to knight chess piece and changed site logo.
@@ -16,8 +16,9 @@ Notes:
 12) Instructors, admins and guests can also view upcoming camps where a specified location is going to be used through the 'camps_using' partial on the location show page.
 13) Instructors index page for administrators is a list of all instructors with 2 additional columns: Active and Email address (as told in the last page of the chess camp narrative). 
 14) Added user authentication tests to user_test.rb for full test coverage on all models. 'photo_uploader.rb' and 'chess_camp_helpers.rb' don't have full test coverage. 
+15) On the family show page, admins have the option to view the payment history of all camps a family's students has registered for by_student. 
 
 
-Extra Credit:
+EXTRA CREDIT:
 1) Javascript enabled Google API map added to Location show page.
 

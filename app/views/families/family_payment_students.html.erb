@@ -26,5 +26,7 @@
 		<span class="paginate">
 			<%= will_paginate @fam_registrations, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 		</span>
+
+		<%= link_to "Back to family", family_path(@family), class: "button tiny radius" %>&nbsp;&nbsp;
 	</div>
 </div>

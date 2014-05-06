@@ -45,7 +45,7 @@ class FamiliesController < ApplicationController
   def family_payment_students
     # gets all years camps were given for the family payments by year page
     @family = Family.find(params[:id])
-    @fam_registrations = @family.registrations.paginate(:page => params[:page]).per_page(10)
+    @fam_registrations = @family.registrations.by_student.paginate(:page => params[:page]).per_page(10)
   end
 
   private

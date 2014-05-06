@@ -32,6 +32,3 @@
 <% if can? :index, Instructor %>
 	<%= link_to "Back to list instructors", instructors_path, class: "button secondary tiny radius" %>&nbsp;&nbsp;
 <% end %>
-<% if can? :destroy, @instructor %>
-	<%= link_to 'Destroy instructor', instructor_path(@instructor), data: { confirm: 'Are you sure you want to permanently remove this instructor from the system?' }, method: :delete, class: "button tiny radius alert" %>
-<% end %>

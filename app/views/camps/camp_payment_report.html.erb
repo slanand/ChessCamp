@@ -11,6 +11,7 @@
     <td><%= link_to registration.student.proper_name, student_path(registration.student) %> </td>
     <td> <%= registration.payment_status.capitalize %></td>
     <td> <%= link_to "Edit registration", edit_registration_path(registration), class: "button tiny radius" %>&nbsp; </td>
+    <td> <%= link_to 'Delete registration', registration_path(registration), data: { confirm: 'Are you sure you want to permanently remove this registration from the system?' }, method: :delete, class: "button tiny radius alert" %> </td>
   </tr>
 <% end %>
 </table>

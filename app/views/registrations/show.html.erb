@@ -16,6 +16,7 @@
 	  <%= @registration.points_earned %><br /><br />
 
 	<%= link_to "Edit registration", edit_registration_path(@registration), class: "button small radius" %>&nbsp; 
+	<td> <%= link_to 'Delete registration', registration_path(@registration.camp), data: { confirm: 'Are you sure you want to permanently remove this registration from the system?' }, method: :delete, class: "button tiny radius alert" %> </td>
 	<%= link_to_function "Back", "history.back()", :class => 'button small secondary radius' %>
 
   </div>

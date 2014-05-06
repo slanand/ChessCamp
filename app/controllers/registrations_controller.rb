@@ -39,7 +39,7 @@ class RegistrationsController < ApplicationController
 
   def destroy
   	@registration.destroy
-  	redirect_to camps_url, notice: "This registration has been removed from the system."
+  	redirect_to camp_url(@registration.camp), notice: "This registration has been removed from the system."
   end
 
   private
