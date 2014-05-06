@@ -4,7 +4,12 @@
     <legend> <%= controller.action_name.capitalize %> Registration </legend>
     
     <%= f.hidden_field :camp_id %>
-    <%= f.input :student_id, collection: @students, prompt: "Select student..." %>
+    <% if controller.action_name == "edit" %>
+      <%= f.input :student_id, as: :hidden, input_html: { value: @registration.student_id } %>
+      <%= @registration.student.proper_name %><br /><br />
+    <% else %>
+      <%= f.input :student_id, collection: @students, prompt: "Select student..." %>
+    <% end %>
     <%= f.input :payment_status, collection: [['Deposit only', 'deposit'],['Paid', 'full']], prompt: "Select payment_status..." %>
     <%= f.input :points_earned %>
 

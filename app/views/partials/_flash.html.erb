@@ -1,5 +1,5 @@
 <% flash.each do |name, msg| %>
-  <div data-alert class="alert-box <%= :notice ? "success" : "warning" %> radius">
+  <div data-alert class="alert-box <%= name == :notice ? "success" : "alert" %> radius">
     <a href="#" class="close">&times;</a>
     <%= msg %>
   </div>

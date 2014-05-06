@@ -44,7 +44,8 @@ ChessCamp::Application.routes.draw do
   get 'camp/:id/home_payment_report' => 'home#home_payment_report', as: :dashboard_payment_report
   get 'camp/:id/camp_payment_report' => 'camps#camp_payment_report', as: :camp_payment_report
   get 'camp/:id/registered_students' => 'home#registered_students', as: :registered_students
-
+  get 'family/:id/family_payment_students' => 'families#family_payment_students', as: :all_family_payments
+  get 'past_camp_payments' => 'home#past_camp_payments', as: :past_camp_payments
   # set the root url
   root to: 'home#index'
 

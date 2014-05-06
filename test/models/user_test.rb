@@ -63,5 +63,13 @@ class UserTest < ActiveSupport::TestCase
       deny @mark_user.role?(:instructor)
     end
 
+    should "authenticate a user in the system with the correct username and password" do
+      assert_equal @mark_user, User.authenticate('mheimann', 'secret')
+    end
+
+    should "NOT authenticate a user in the system with the incorrect username" do
+      assert_nil @mike_user, User.authenticate('mark', 'secret')
+    end
+
   end
 end

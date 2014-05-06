@@ -26,5 +26,8 @@ class HomeController < ApplicationController
   	@registrations = @camp.registrations.by_student.paginate(:page => params[:page]).per_page(10)
   end
 
+  def past_camp_payments
+    @past_camps = Camp.past.chronological.paginate(:page => params[:page]).per_page(5)
+  end
 
 end

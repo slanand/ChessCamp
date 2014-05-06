@@ -19,3 +19,7 @@
 <span class="paginate">
 <%= will_paginate @registrations, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
 </span>
+<br>
+<% if can? :create, Registration %>
+  <%= link_to "Register student for this camp", new_registration_path(camp_id: @camp.id), class: "button tiny radius" %>&nbsp;
+<% end %>

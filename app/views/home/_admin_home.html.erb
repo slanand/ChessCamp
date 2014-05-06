@@ -33,7 +33,7 @@
 	</div>
 	<div id="adminCamps" class= "small-8 columns">
 
-		<h4> Upcoming Chess Camps <span class="add_link"><%= link_to "[add new camp]", new_camp_path %></span></h4>
+		<h4> Upcoming Chess Camps <span class="add_link"><%= link_to "[add new camp]", new_camp_path %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "PAST CAMPS PAYMENT REPORTS", past_camp_payments_path, class: "button tiny radius" %></h4>
 		<% if @upcoming_camps.size == 0 %>
 			<h5><em> No upcoming camps to show. </em></h5>
 		<% else %>

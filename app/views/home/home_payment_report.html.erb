@@ -27,4 +27,7 @@
 </span>
 
 <br>
-<%= link_to_function "Back to homepage", home_path, :class => 'button tiny secondary radius' %>
+<% if can? :create, Registration %>
+  <%= link_to "Register student for this camp", new_registration_path(camp_id: @camp.id), class: "button tiny radius" %>&nbsp;
+<% end %> &nbsp;&nbsp;
+<%= link_to "Back to homepage", home_path, :class => 'button tiny secondary radius' %>

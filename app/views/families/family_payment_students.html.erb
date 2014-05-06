@@ -1,0 +1,30 @@
+<div class= "row">
+	<div id="adminCamps" class= "small-8 columns">
+		<h4> Payment history for <%= @family.family_name%> Family</h4>
+		<% if @fam_registrations.size == 0 %>
+			<h5><em> No payment history to show for this family. </em></h5>
+		<% else %>
+			<table class="table">
+				<tr>
+					<th width="160" align="left">Student Name</th>
+		            <th width="160" align="left">Camp</th>
+		            <th width="160" align="left">Payment Status</th>
+		            <th></th>
+				<% @fam_registrations.each do |registration| %>
+				  <tr>
+				  	<td width= "180"> <%= link_to registration.student.name, student_path(registration.student) %> </td>
+				    <td width="200"><%= link_to registration.camp.name, camp_path(registration.camp) %> (<%= registration.camp.start_date.strftime('%m/%d/%y') %>)
+				    </td>
+				    <td width="200"> <%= registration.payment_status.capitalize %>
+				    </td>
+				  </tr>
+				<% end %>
+			</table>
+		<% end %>
+
+		<!-- Add the pagination using will_paginate gem -->
+		<span class="paginate">
+			<%= will_paginate @fam_registrations, :previous_label => "Previous&nbsp;", :next_label => "&nbsp;Next" %>
+		</span>
+	</div>
+</div>
