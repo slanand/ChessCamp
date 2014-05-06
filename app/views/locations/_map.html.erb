@@ -7,13 +7,13 @@
         height: 400px;
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMzXzlpIBtI4Hc2o_TaTdN6TfXW3pUJJM&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
       function initialize() {
       // @location.latitude, @location.longitcude
         var mapOptions = {
           center: new google.maps.LatLng(<%= @location.latitude %>, <%= @location.longitude %>),
-          zoom: 8
+          zoom: 13
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
