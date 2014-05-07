@@ -60,6 +60,9 @@ gem 'bcrypt-ruby', '3.1.5'
 # Can-can for authorization
 gem 'cancancan', '~> 1.7'
 
+gem 'chronic', '0.10.2'
+gem 'time_date_helpers'
+
 # Additional gems that are very useful in Rails development
 group :development do
   gem 'quiet_assets'

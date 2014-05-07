@@ -7,7 +7,7 @@
           <%= f.input :last_name %>
           <%= f.collection_select :family_id, Family.alphabetical.active, :id, :family_name, :prompt => "Select family..." %>
           <%= f.input :rating %>
-          <%= f.input :date_of_birth, as: :string %>
+          <%= f.input :date_of_birth, label: "Date of Birth", as: :string, :input_html => {:class => "datepicker"} %>
           <%= f.input :active %>
 
           <div class="form-actions">

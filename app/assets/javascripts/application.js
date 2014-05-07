@@ -17,14 +17,16 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ 
-	$(document).foundation(); 
-	console.log("here");
-	$( "#student_date_of_birth" ).datepicker({
-      changeMonth: true,
-      changeYear: true,
-      "dateFormat": "mm/dd/yy"
-    });
+$(function(){ $(document).foundation(); });
+
+// Datepicker code
+$(function() {
+  $(".datepicker").datepicker({
+  	changeMonth: true,
+    changeYear: true,
+    format: 'mm/dd/YYYY'
+  });
 });
+
 
 

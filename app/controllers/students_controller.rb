@@ -42,11 +42,17 @@ class StudentsController < ApplicationController
   end
 
   private
+
+    def convert_date_of_birth
+      params[:student][:date_of_birth] = convert_to_date(params[:student][:date_of_birth]) unless params[:student][:date_of_birth].blank?
+    end
+
   	def set_student
   		@student = Student.find(params[:id])
   	end
 
   	def student_params
+      convert_date_of_birth
   		params.require(:student).permit(:family_id, :first_name, :last_name, :date_of_birth, :rating, :active)
   	end
   	
