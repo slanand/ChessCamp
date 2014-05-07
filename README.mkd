@@ -2,7 +2,7 @@ Notes:
 
 *** Sometimes I get location errors when I run 'rake test:units', and sometimes they all pass too. The number of errors I get when I run 'rake test:units' changes everytime...probably because of sending too many geocoding requests to Google? ***
 
-1) Added datepicker for student date of birth. 
+1) Added datepicker for student date of birth, but the left and right arrows to change the month don't show up on my computer for some reason (it's just invisible), so I added the option to choose the month and year. 
 2) Changed favicon to knight chess piece and changed site logo.
 3) Guests cannot see partials that have inactive camps/instructors/locations etc.
 4) Guests cannot see inactive camps/curriculums/locations/instructors partials on an entity's index page. 

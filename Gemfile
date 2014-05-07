@@ -60,6 +60,7 @@ gem 'bcrypt-ruby', '3.1.5'
 # Can-can for authorization
 gem 'cancancan', '~> 1.7'
 
+# datepicker gems
 gem 'chronic', '0.10.2'
 gem 'time_date_helpers'
 
