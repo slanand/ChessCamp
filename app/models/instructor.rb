@@ -21,6 +21,8 @@ class Instructor < ActiveRecord::Base
   scope :inactive, -> { where(active: false) }
   scope :needs_bio, -> { where('bio IS NULL') }
   # scope :needs_bio, -> { where(bio: nil) }  # this also works...
+  # search for all the instructors in the system by either first or last name
+  scope :search, ->(term) { where('first_name LIKE ? OR last_name LIKE ?', "#{term}%", "#{term}%") }
 
   # class methods
   def self.for_camp(camp)

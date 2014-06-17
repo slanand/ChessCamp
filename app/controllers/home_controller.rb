@@ -4,7 +4,11 @@ class HomeController < ApplicationController
   	@upcoming_camps = Camp.upcoming.chronological.paginate(:page => params[:page]).per_page(5)
   	if (current_user != nil) && (current_user.role == "instructor") 
   		@instructor_camps = current_user.instructor.camps.upcoming.chronological.paginate(:page => params[:page]).per_page(5)
-	end
+    end
+    @upcoming_registrations = 0
+    @upcoming_camps.each do |camp|
+      @upcoming_registrations += camp.registrations.size
+    end
   end
 
   def about
@@ -14,6 +18,13 @@ class HomeController < ApplicationController
   end
 
   def privacy
+  end
+
+  def search
+    @query = params[:query]
+    @instructors = Instructor.search(@query)
+    @students = Student.search(@query)
+    @total_hits = @students.size + @instructors.size
   end
   
   def home_payment_report 

@@ -113,5 +113,11 @@ class StudentTest < ActiveSupport::TestCase
       assert_equal ["Sean", "Zach"], Student.at_or_above_rating(1010).all.map(&:first_name).sort      
     end
 
+    # test the scope 'search'
+    should "shows that search for student by either (part of) last or first name works" do
+      assert_equal 1, Student.search("Kelsey").size
+      assert_equal 0, Student.search("heimann").size
+    end
+
   end
 end

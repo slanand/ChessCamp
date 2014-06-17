@@ -1,6 +1,10 @@
 <h3>Camp Details</h3><br />
 <strong>Name:&nbsp;&nbsp;</strong> 
-  <%= link_to @camp.name, curriculum_path(@camp.curriculum) %><br /><br />
+  <%= @camp.name %><br /><br />
+
+<strong>Description:&nbsp;&nbsp;</strong>  
+  <%= @camp.curriculum.description %><br /><br />
+</strong>
 
 <strong>Rating:&nbsp;&nbsp;</strong>
   <% if @camp.curriculum.min_rating == 0 %>

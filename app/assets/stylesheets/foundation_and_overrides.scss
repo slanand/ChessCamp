@@ -1337,6 +1337,22 @@ select.date { width: 95px; }
   width: auto; display:inline; 
 } 
 
+#searchBar {
+	float: right;
+}
+
+#textbox {
+	float: left;
+}
+
+#searchbutton {
+	float: right;
+}
+
+#query {
+	bottom: 10px;
+}
+
 /* Cutting back the spacing on simple_form... */
 .form-horizontal .min_user .control-label {
   font-size: 90%;

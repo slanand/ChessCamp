@@ -49,8 +49,6 @@ class Ability
         # guests can 
         can :show, Instructor
         can :index, Instructor
-        can :index, Curriculum
-        can :show, Curriculum
         can :index, Camp
         can :show, Camp
         can :show, Location

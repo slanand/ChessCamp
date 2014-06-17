@@ -6,8 +6,8 @@
         </li>
       </ul>
       <section class="top-bar-section">
+        
         <ul class="left">
-
           <% if current_user == nil %>
             <li class="has-dropdown">
               <%= link_to "Home", home_path %>
@@ -20,15 +20,15 @@
           <% end %>
 
           <!-- options for curriculums -->
-          <li class="has-dropdown">
-            <%= link_to "Curriculums", curriculums_path %>
-            <ul class="dropdown">
-                <li><%= link_to "List Curriculums", curriculums_path %></li>
-              <% if can? :create, Curriculum %>
-                <li><%= link_to "Add a Curriculum", new_curriculum_path %></li>
-              <% end %>
-            </ul>
-          </li>
+          <% if (can? :index, Curriculum) && (can? :create, Curriculum) %>
+            <li class="has-dropdown">
+              <%= link_to "Curriculums", curriculums_path %>
+              <ul class="dropdown">
+                  <li><%= link_to "List Curriculums", curriculums_path %></li>
+                  <li><%= link_to "Add a Curriculum", new_curriculum_path %></li>
+              </ul>
+            </li>
+          <% end %>
 
           <!-- options for camps -->
           <li class="has-dropdown">
@@ -89,7 +89,9 @@
               <% end %>
             </ul>
           </li>
+        </ul>
 
+        <ul class= "right">
           <li class = "has-dropdown">
             <% if logged_in? %>
                 <%= link_to "Welcome, #{current_user.instructor.first_name} (#{current_user.role})", instructor_path(current_user.instructor) %>
@@ -103,6 +105,7 @@
             <% end %>
           </li>
         </ul>
+
       </section>
     </nav>
   </div>
