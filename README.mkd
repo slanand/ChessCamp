@@ -3,3 +3,5 @@ This web application was a final term project for my 67-272 Application Design a
 The chess camp system helps manage information about different students, curriculums and various camps being offered by the A & M Chess Camp Company. Administrators, instructors and guest users have different access rights to pages on the chess camp website.
 
 This web application was created using Ruby on Rails, and tested using FactoryGirl and cucumber tests. 
+
+Clone in desktop, bundle install gems and run rails server in order to view the web-based application.
