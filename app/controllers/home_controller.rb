@@ -5,8 +5,9 @@ class HomeController < ApplicationController
   	if (current_user != nil) && (current_user.role == "instructor") 
   		@instructor_camps = current_user.instructor.camps.upcoming.chronological.paginate(:page => params[:page]).per_page(5)
     end
+    @all_upcoming_camps = Camp.upcoming.all
     @upcoming_registrations = 0
-    @upcoming_camps.each do |camp|
+    @all_upcoming_camps.each do |camp|
       @upcoming_registrations += camp.registrations.size
     end
   end
