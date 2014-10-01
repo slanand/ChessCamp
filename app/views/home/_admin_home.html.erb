@@ -24,7 +24,9 @@
 				<strong><%= Instructor.active.size %></strong> active instructors <br>
 				<strong><%= Family.active.size %></strong> active families <br>
 				<strong><%= Student.active.size %></strong> active students <br>
-				<strong><%= @upcoming_registrations / @all_upcoming_camps.size%></strong> average registrations per camp <br>
+				<% if @all_upcoming_camps.size != 0 %>
+					<strong><%= @upcoming_registrations / @all_upcoming_camps.size%></strong> average registrations per camp <br>
+				<% end %>
 		</div>
 		<% unless current_user.instructor.picture_url.nil? %>
 		    <%= image_tag current_user.instructor.picture_url %><br /><br />
