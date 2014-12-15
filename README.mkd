@@ -1,7 +1,13 @@
+##About
+
 This web application was a final term project for my 67-272 Application Design and Development class at Carnegie Mellon University. The course taught concepts and techniques to design and develop software applications, and to understand the design process.
 
 The chess camp system helps manage information about different students, curriculums and various camps being offered by the A & M Chess Camp Company. Administrators, instructors and guest users have different access rights to pages on the chess camp website.
 
 This web application was created using Ruby on Rails, and tested using FactoryGirl and cucumber tests. 
 
-Clone in desktop, bundle install gems and run rails server in order to view the web-based application.
+##Setup
+
+1. Clone in desktop
+2. `bundle install` gems
+3. Run `rails server` in order to view the web-based application
