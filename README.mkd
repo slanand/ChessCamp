@@ -11,3 +11,4 @@ This web application was created using Ruby on Rails, and tested using FactoryGi
 1. Clone in desktop
 2. `bundle install` gems
 3. Run `rails server` in order to view the web-based application
+4. To test admin functionality use login as 'alex' with 'secret' as the password. 
